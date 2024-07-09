@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: otus-lesson28
+    environment:
+      POSTGRES_DB: "virkato"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./db/:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+volumes:
+  db:

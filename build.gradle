@@ -9,9 +9,25 @@ repositories {
     mavenCentral()
 }
 
+def junitVer = '5.10.3'
+def lombokVer = '1.18.34'
+def hibernateVer = '6.5.2.Final'
+def postgresqlVer = '42.7.3'
+
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.3')
+    testImplementation platform("org.junit:junit-bom:${junitVer}")
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly "org.projectlombok:lombok:${lombokVer}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVer}"
+
+    // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+    implementation "org.hibernate.orm:hibernate-core:${hibernateVer}"
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation "org.postgresql:postgresql:${postgresqlVer}"
+
 }
 
 test {
