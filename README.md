@@ -25,6 +25,14 @@ class Phone {
 ## Реализация
 
 ---
+
+### docker-compose.yml
+- Запустит контейнер `otus-lesson28` в группе `lesson28-jpql` (по названию модуля проекта).
+- Из папки `/db` запустится скрипт инициализации для создания схемы `lesson28`
+
+Для проверки работоспособности можно запустить тест.
+
+---
 Логи
 ```log
 Hibernate: create table lesson28.address (id bigint not null, full_address varchar(255), primary key (id))
